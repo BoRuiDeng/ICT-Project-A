@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --background-dark: #1C1C28;
+            --background-light: #28293D;
+            --text-light: #FFFFFF;
+            --text-gray: #c5c5df;
+            --input-bg: #363751;
+            --button-bg: #0D1A26;
+            --button-hover: #112D3A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .sign-in-container {
+            background-color: var(--background-dark);
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .sign-in-container h1 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sign-in-container p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .sign-in-container input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--input-bg);
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .sign-in-container input::placeholder {
+            color: var(--text-gray);
+        }
+
+        .sign-in-container .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .sign-in-container .options a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .sign-in-container .options a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-in-container button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--button-bg);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .sign-in-container button:hover {
+            background-color: var(--button-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="sign-in-container">
+        <h1>Welcome Back 👋</h1>
+        <p>Please enter your details to sign in</p>
+        <form>
+            <input type="email" placeholder="Example@email.com" required>
+            <input type="password" placeholder="At least 8 characters" required>
+            <div class="options">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Sign in</button>
+        </form>
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+</body>
+</html>
