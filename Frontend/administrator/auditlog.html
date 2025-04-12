@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Fund</div>
+      <nav>
+        <ul>
+            <li>
+              <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li class="active">
+              <a href="auditlog.html"><i class="fas fa-clipboard-list"></i> Audit logs</a>
+            </li>
+            <li>
+              <a href="settings.html"><i class="fas fa-cog"></i> Setting</a>
+            </li>
+          </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header Filter & Search -->
+      <div class="header-bar">
+        <button class="filter-btn">Add filter</button>
+        <input type="text" placeholder="Search for a student by name or email">
+      </div>
+
+      <!-- User Table -->
+      <div class="user-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Level</th>
+              <th>Audit date</th>
+              <th>Action type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example Row -->
+            <tr>
+              <td><img src="avatar1.jpg" class="avatar"> Sarah Martinez</td>
+              <td>Super Admin</td>
+              <td>06-03-2021</td>
+              <td>delete</td>
+              <td>
+                <i class="fas fa-pen edit-btn"></i>
+                <i class="fas fa-trash"></i>
+              </td>
+            </tr>
+            <!-- Repeat rows similarly -->
+            <tr>
+              <td><img src="avatar2.jpg" class="avatar"> John Smith</td>
+              <td>Admin</td>
+              <td>12-05-2022</td>
+              <td>add</td>
+              <td>
+                <i class="fas fa-pen edit-btn"></i>
+                <i class="fas fa-trash"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add Button -->
+      <button class="add-btn"><i class="fas fa-plus"></i></button>
+    </main>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h1>Users' Settings</h1>
+      </div>
+
+      <div class="user-info">
+        <div class="section">
+          <div class="field-group">
+            <span class="field-label">Full name</span>
+            <div class="field-value">Sarah</div>
+          </div>
+          <div class="field-group">
+            <span class="field-label">Username</span>
+            <div class="field-value">sarah</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Roles</div>
+          <ul class="roles-list">
+            <li>Doctor</li>
+            <li>Address</li>
+            <li class="field-placeholder">Please enter your username</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Email</div>
+          <div class="field-value">Sarah3@gmail.com</div>
+          <div class="field-group">
+            <span class="field-label">Phone number</span>
+            <div class="field-value">+1</div>
+          </div>
+          <div class="field-placeholder">Please enter your phone number</div>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="button button-cancel" id="cancelBtn">Cancel</button>
+        <button class="button button-update">Update</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get all edit buttons
+    const editButtons = document.querySelectorAll('.edit-btn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    // Add click event to each edit button
+    editButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        modalOverlay.style.display = 'flex';
+      });
+    });
+
+    // Close modal when cancel button is clicked
+    cancelBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
