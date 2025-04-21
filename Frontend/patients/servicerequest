@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Management</title>
+     <!-- Link to Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Link to CDN icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --primary-dark: #5648B1;
+            --background-dark: #1C1C28;
+            --background-light: #28293D;
+            --text-light: #FFFFFF;
+            --text-gray: #8E8EA9;
+            --border-color: #363751;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .vertical-nav {
+            height: 150vh; /* Full height */
+            width: 250px; /* Fixed width for navbar */
+            background-color: #000000; /* Dark background */
+            color: white;
+            padding-top: 20px;
+        }
+        .vertical-nav a {
+            display: block; /* Ensures each link is on its own line */
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+        }
+        .vertical-nav a:hover {
+            background-color: rgba(78, 79, 235, 0.5); /* 0.5 controls transparency */
+            padding: 10px 55px;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 100px;
+            padding: 2rem;
+            width: calc(100% - 250px);
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .service-table th,
+        .service-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .service-table th {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .service-table td {
+            color: var(--text-light);
+        }
+
+        .form-container {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container h3 {
+            margin-bottom: 1rem;
+        }
+
+        .form-container input {
+            width: calc(100% - 2rem);
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--background-dark);
+            color: var(--text-light);
+        }
+
+        .form-container input::placeholder {
+            color: var(--text-gray);
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav>
+        <div class="vertical-nav d-flex flex-column align-items-start">
+                <a class="navbar-brand d-flex justify-content-center align-items-center rounded mx-3" 
+                style="background-color: rgb(78, 79, 235); padding: 10px 85px;" href="#">FUND</a>
+                <br>
+                <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
+                    <i class="bi bi-house me-2"></i>Home
+                  </a>
+            <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
+                <i class="bi bi-border me-2"></i>Dashboard
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
+                <i class="bi bi-journal-plus me-2"></i>Service Management
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#about">
+                <i class="bi bi-receipt me-2"></i>Billing
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#services">
+                <i class="bi bi-archive me-2"></i>Inventory
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#services">
+                <i class="bi bi-box-arrow-right me-2 "></i> Sign out
+              </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+    
+        <!-- Add Service Form -->
+        <div class="form-container">
+            <h3>Add New Service Request</h3>
+            <form id="add-service-form">
+                <input type="text" id="service-name" placeholder="Service Name" required>
+                <input type="text" id="requesting-user" placeholder="Requesting User" required>
+                <input type="text" id="user-id" placeholder="User ID" required>
+                <input type="date" id="registration-date" placeholder="Registration Date" required>
+                <input type="text" id="status" placeholder="Status (e.g., Pending, Completed)" required>
+                <button type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const serviceList = document.getElementById('service-list');
+        const addServiceForm = document.getElementById('add-service-form');
+
+        // Add new service request
+        addServiceForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const serviceName = document.getElementById('service-name').value;
+            const requestingUser = document.getElementById('requesting-user').value;
+            const userId = document.getElementById('user-id').value;
+            const registrationDate = document.getElementById('registration-date').value;
+            const status = document.getElementById('status').value;
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${serviceName}</td>
+                <td>${requestingUser}</td>
+                <td>${userId}</td>
+                <td>${registrationDate}</td>
+                <td>${status}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="editService(this)">Edit</button>
+                    <button class="btn btn-primary" onclick="deleteService(this)">Delete</button>
+                </td>
+            `;
+
+            serviceList.appendChild(newRow);
+            addServiceForm.reset();
+        });
+
+        // Edit service request
+        function editService(button) {
+            const row = button.parentElement.parentElement;
+            const serviceName = row.children[0].textContent;
+            const requestingUser = row.children[1].textContent;
+            const userId = row.children[2].textContent;
+            const registrationDate = row.children[3].textContent;
+            const status = row.children[4].textContent;
+
+            document.getElementById('service-name').value = serviceName;
+            document.getElementById('requesting-user').value = requestingUser;
+            document.getElementById('user-id').value = userId;
+            document.getElementById('registration-date').value = registrationDate;
+            document.getElementById('status').value = status;
+
+            row.remove();
+        }
+
+        // Delete service request
+        function deleteService(button) {
+            const row = button.parentElement.parentElement;
+            row.remove();
+        }
+    </script>
+</body>
+</html>
