@@ -146,42 +146,6 @@
             color: var(--primary-dark);
         }
 
-        /* Notifications */
-        .notifications {
-            background: var(--background-light);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .notification-item {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .notification-item:last-child {
-            border-bottom: none;
-        }
-
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .badge {
-            background: var(--primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.875rem;
-        }
-
-        @media (max-width: 1024px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
@@ -216,19 +180,6 @@
                     <li><a href="system-settings.html">System Settings</a></li>
                     <li><a href="audit-logs.html">View Audit Logs</a></li>
                 </ul>
-            </div>
-
-            <!-- Notifications -->
-            <div class="notifications">
-                <div class="section-header">
-                    <h3>Notifications</h3>
-                </div>
-                <div class="notification-item">
-                    <p>New user registration pending approval.</p>
-                </div>
-                <div class="notification-item">
-                    <p>System maintenance scheduled for 10 PM.</p>
-                </div>
             </div>
         </div>
     </div>
