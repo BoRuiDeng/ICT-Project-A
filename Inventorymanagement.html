@@ -261,17 +261,19 @@
 
         // Edit inventory item
         function editItem(button) {
-            const row = button.parentElement.parentElement;
-            const name = row.children[0].textContent;
-            const quantity = row.children[1].textContent;
-            const date = row.children[2].textContent;
+    const row = button.parentElement.parentElement;
+    const name = row.children[0].textContent;
+    const quantity = row.children[1].textContent;
+    const date = row.children[2].textContent;
 
-            document.getElementById('item-name').value = name;
-            document.getElementById('item-quantity').value = quantity;
-            document.getElementById('item-date').value = date;
+    // Populate the form fields with the row's data
+    document.getElementById('item-name').value = name;
+    document.getElementById('item-quantity').value = quantity;
+    document.getElementById('item-date').value = date;
 
-            row.remove();
-        }
+    // Optionally, you can add a mechanism to track the row being edited
+    row.classList.add('editing'); // Add a class to indicate the row is being edited
+}
 
         // Delete inventory item
         function deleteItem(button) {
