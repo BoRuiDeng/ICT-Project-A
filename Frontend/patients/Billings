@@ -39,7 +39,7 @@
 
         /* Sidebar Styles */
         .vertical-nav {
-            height: 100vh; /* Full height */
+            height: 200vh; /* Full height */
             width: 250px; /* Fixed width for navbar */
             background-color: #000000; /* Dark background */
             color: white;
@@ -192,6 +192,9 @@
                 grid-template-columns: 1fr;
             }
         }
+        .card {
+    color: white; /* Set the font color to white */
+}
     </style>
 </head>
 <body>
