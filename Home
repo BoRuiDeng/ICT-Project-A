@@ -67,7 +67,7 @@
 <body>
     <nav class="nav-bar">
         <div class="logo">
-            <a href="#" style="color: var(--text-light); font-size: 1.5rem; text-decoration: none;">Healthcare Portal</a>
+            <a href="#" style="color: var(--text-light); font-size: 1.5rem; text-decoration: none;">FUND</a>
         </div>
         <div class="nav-links">
             <a href="signup.html">Sign Up</a>
