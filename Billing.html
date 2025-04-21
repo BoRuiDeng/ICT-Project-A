@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal - Billing</title>
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --primary-dark: #5648B1;
+            --primary-light: #8677E9;
+            --background-dark: #1C1C28;
+            --background-light: #28293D;
+            --text-light: #FFFFFF;
+            --text-gray: #8E8EA9;
+            --border-color: #363751;
+            --success-color: #2ECC71;
+            --warning-color: #F1C40F;
+            --danger-color: #E74C3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background: #1C1C28;
+            padding: 1rem;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: var(--text-gray);
+            text-decoration: none;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            gap: 12px;
+        }
+
+        .nav-item.purple {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        .nav-item.active {
+            color: var(--text-light);
+        }
+
+        .nav-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 1rem 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+            width: calc(100% - 250px);
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Billing Grid */
+        .billing-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        /* Payment History Table */
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .payment-table th,
+        .payment-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .payment-table th {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+        }
+
+        .status-paid {
+            background: rgba(46, 204, 113, 0.2);
+            color: var(--success-color);
+        }
+
+        .status-pending {
+            background: rgba(241, 196, 15, 0.2);
+            color: var(--warning-color);
+        }
+
+        /* User Details Section */
+        .user-details {
+            margin-bottom: 2rem;
+        }
+
+        .user-details div {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .user-details div span {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 1024px) {
+            .billing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Fund</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Borrower</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Audit logs</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Consultant</span>
+        </a>
+
+        <a href="#" class="nav-item active purple">
+            <span class="nav-item active"></span>
+            <span>Billing</span>
+        </a>
+
+        <div class="nav-divider"></div>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Notification</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Administration</span>
+        </a>
+
+        <a href="#" class="nav-item">
+            <span class="nav-icon"></span>
+            <span>Setting</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Billing & Payments</h1>
+            <button class="btn btn-primary">Generate Invoice</button>
+        </div>
+
+        <!-- User Details Section -->
+        <div class="card user-details">
+            <div>
+                <span>User Name:</span>
+                <span>John Doe</span>
+            </div>
+            <div>
+                <span>Invoice ID:</span>
+                <span>#INV-001</span>
+            </div>
+            <div>
+                <span>Patient ID:</span>
+                <span>#PAT-12345</span>
+            </div>
+        </div>
+
+        <div class="billing-grid">
+            <!-- Left Column -->
+            <div class="billing-main">
+                <!-- Payment History -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Payment History</h2>
+                    </div>
+                    <table class="payment-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#INV-001</td>
+                                <td>01 Apr 2024</td>
+                                <td>$250.00</td>
+                                <td><span class="status-badge status-paid">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>#INV-002</td>
+                                <td>15 Mar 2024</td>
+                                <td>$180.00</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

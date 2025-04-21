@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal - Home</title>
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --background-dark: #1C1C28;
+            --text-light: #FFFFFF;
+            --text-gray: #c5c5df;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: url('docpat.jpg') no-repeat center center/cover;
+            color: var(--text-light);
+        }
+
+        .nav-bar {
+            background: rgba(28, 28, 40, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero {
+            margin-top: 80px;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="logo">
+            <a href="#" style="color: var(--text-light); font-size: 1.5rem; text-decoration: none;">Healthcare Portal</a>
+        </div>
+        <div class="nav-links">
+            <a href="signup.html">Sign Up</a>
+            <a href="signin.html">Sign In</a>
+            <a href="#about">About Us</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Welcome to Healthcare Portal</h1>
+        <p>Your trusted partner in healthcare management. Experience personalized care with our dedicated medical professionals.</p>
+    </div>
+</body>
+</html>
+
