@@ -229,26 +229,8 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <div class="page-header">
-            <h1>Billing & Payments</h1>
-            <button class="btn btn-primary">Generate Invoice</button>
-        </div>
+      
 
-        <!-- User Details Section -->
-        <div class="card user-details">
-            <div>
-                <span>User Name:</span>
-                <span>John Doe</span>
-            </div>
-            <div>
-                <span>Invoice ID:</span>
-                <span>#INV-001</span>
-            </div>
-            <div>
-                <span>Patient ID:</span>
-                <span>#PAT-12345</span>
-            </div>
-        </div>
 
         <div class="billing-grid">
             <!-- Left Column -->
@@ -256,7 +238,7 @@
                 <!-- Payment History -->
                 <div class="card">
                     <div class="card-header">
-                        <h2>Payment History</h2>
+                        <h2>Payments</h2>
                     </div>
                     <table class="payment-table">
                         <thead>
@@ -285,49 +267,6 @@
                 </div>
             </div>
 
-            <!-- Right Column -->
-            <div class="billing-sidebar">
-                <!-- Subscription Details -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Subscription Details</h2>
-                    </div>
-                    <div class="subscription-info">
-                        <span>Current Plan</span>
-                        <span>Premium</span>
-                    </div>
-                    <div class="subscription-info">
-                        <span>Billing Cycle</span>
-                        <span>Monthly</span>
-                    </div>
-                    <div class="subscription-info">
-                        <span>Next Payment</span>
-                        <span>05 May 2024</span>
-                    </div>
-                </div>
-
-                <!-- Payment Methods -->
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Payment Methods</h2>
-                        <button class="btn btn-primary">Add New</button>
-                    </div>
-                    <div class="payment-method">
-                        <div class="payment-method-icon">💳</div>
-                        <div>
-                            <h3>Visa ending in 4242</h3>
-                            <p>Expires 12/24</p>
-                        </div>
-                    </div>
-                    <div class="payment-method">
-                        <div class="payment-method-icon">🏦</div>
-                        <div>
-                            <h3>Bank Account</h3>
-                            <p>ending in 5678</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </body>
