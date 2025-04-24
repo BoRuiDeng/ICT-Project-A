@@ -199,29 +199,33 @@
 </head>
 <body>
     <!-- Sidebar -->
-            <nav>
+        <nav>
 
-            <div class="vertical-nav d-flex flex-column align-items-start">
-                    <a class="navbar-brand d-flex justify-content-center align-items-center rounded mx-3" 
-                    style="background-color: rgb(78, 79, 235); padding: 10px 85px;" href="#">FUND</a>
-                    <br>
-                    <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
-                        <i class="bi bi-house me-2"></i>Home
-                      </a>
+        <div class="vertical-nav d-flex flex-column align-items-start">
+                <a class="navbar-brand d-flex justify-content-center align-items-center rounded mx-3" 
+                style="background-color: rgb(78, 79, 235); padding: 10px 85px;" href="#">FUND</a>
+                <br>
                 <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
-                    <i class="bi bi-border me-2"></i>Dashboard
+                    <i class="bi bi-house me-2"></i>Home
                   </a>
-                  <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
-                    <i class="bi bi-journal-plus me-2"></i>Service request
-                  </a>
-                  <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#about">
-                    <i class="bi bi-receipt me-2"></i>Billing
-                  </a>
-                  <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#services">
-                    <i class="bi bi-box-arrow-right me-2 "></i> Sign out
-                  </a>
-            </div>
-        </nav>
+            <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
+                <i class="bi bi-border me-2"></i>Dashboard
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3 " href="#home">
+                <i class="bi bi-journal-plus me-2"></i>Service Management
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#about">
+                <i class="bi bi-receipt me-2"></i>Billing
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#services">
+                <i class="bi bi-archive me-2"></i>Inventory
+              </a>
+              <a class="d-flex justify-content-start align-items-center rounded mx-3" href="#services">
+                <i class="bi bi-box-arrow-right me-2 "></i> Sign out
+              </a>
+        </div>
+    </nav>
+
 
     <!-- Main Content -->
     <div class="main-content">
