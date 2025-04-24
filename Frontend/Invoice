@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --primary-dark: #5648B1;
+            --background-dark: #1C1C28;
+            --background-light: #28293D;
+            --text-light: #FFFFFF;
+            --text-gray: #8E8EA9;
+            --border-color: #363751;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .invoice-container {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .invoice-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .invoice-header .invoice-details {
+            text-align: right;
+        }
+
+        .invoice-header .invoice-details span {
+            display: block;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .invoice-section {
+            margin-bottom: 2rem;
+        }
+
+        .invoice-section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .invoice-section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-section table th,
+        .invoice-section table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .invoice-section table th {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .invoice-total {
+            text-align: right;
+            margin-top: 1rem;
+        }
+
+        .invoice-total span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Invoice Header -->
+        <div class="invoice-header">
+            <h1>Invoice</h1>
+            <div class="invoice-details">
+                <span>Invoice ID: #INV-001</span>
+                <span>Date: 01 Apr 2024</span>
+                <span>Due Date: 15 Apr 2024</span>
+            </div>
+        </div>
+
+        <!-- Billing Information -->
+        <div class="invoice-section">
+            <h2>Billing Information</h2>
+            <table>
+                <tr>
+                    <th>Customer Name</th>
+                    <td>John Doe</td>
+                </tr>
+                <tr>
+                    <th>Customer ID</th>
+                    <td>#CUST-12345</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Invoice Items -->
+        <div class="invoice-section">
+            <h2>Invoice Items</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Medical Gloves</td>
+                        <td>2</td>
+                        <td>$50.00</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr>
+                        <td>Face Masks</td>
+                        <td>5</td>
+                        <td>$30.00</td>
+                        <td>$150.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Invoice Total -->
+        <div class="invoice-total">
+            <span>Total: $250.00</span>
+        </div>
+    </div>
+</body>
+</html>
