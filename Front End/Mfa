@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal - MFA</title>
+    <style>
+        :root {
+            --primary: #6C5DD3;
+            --primary-dark: #5648B1;
+            --background-dark: #1C1C28;
+            --background-light: #28293D;
+            --text-light: #FFFFFF;
+            --text-gray: #8E8EA9;
+            --border-color: #363751;
+            --danger-color: #E74C3C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .mfa-container {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .mfa-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .mfa-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mfa-header p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .mfa-question {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .mfa-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-dark);
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .mfa-input::placeholder {
+            color: var(--text-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="mfa-container">
+        <!-- MFA Header -->
+        <div class="mfa-header">
+            <h1>Multi-Factor Authentication</h1>
+            <p>Please answer the security questions to verify your identity.</p>
+        </div>
+
+        <!-- Security Questions -->
+        <div class="mfa-question">
+            1. What is the name of your first pet?
+        </div>
+        <input type="text" class="mfa-input" placeholder="Enter your answer" id="mfa-answer-1">
+
+        <div class="mfa-question">
+            2. What is your mother's maiden name?
+        </div>
+        <input type="text" class="mfa-input" placeholder="Enter your answer" id="mfa-answer-2">
+
+        <div class="mfa-question">
+            3. What city were you born in?
+        </div>
+        <input type="text" class="mfa-input" placeholder="Enter your answer" id="mfa-answer-3">
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="verifyAnswers()">Submit</button>
+
+        <!-- Error Message -->
+        <div class="error-message" id="error-message" style="display: none;">
+            One or more answers are incorrect. Please try again.
+        </div>
+    </div>
+
+    <script>
+        function verifyAnswers() {
+            const answer1 = document.getElementById('mfa-answer-1').value.trim();
+            const answer2 = document.getElementById('mfa-answer-2').value.trim();
+            const answer3 = document.getElementById('mfa-answer-3').value.trim();
+            const errorMessage = document.getElementById('error-message');
+
+            // Example: Replace these with the correct answers from your backend
+            const correctAnswer1 = 'Fluffy';
+            const correctAnswer2 = 'Smith';
+            const correctAnswer3 = 'New York';
+
+            if (
+                answer1.toLowerCase() === correctAnswer1.toLowerCase() &&
+                answer2.toLowerCase() === correctAnswer2.toLowerCase() &&
+                answer3.toLowerCase() === correctAnswer3.toLowerCase()
+            ) {
+                alert('Authentication successful!');
+                // Redirect to the dashboard or next page
+                window.location.href = 'dashboard.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
